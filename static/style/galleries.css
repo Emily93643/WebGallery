@@ -1,0 +1,61 @@
+#browse_galleries_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0px;
+    margin: 0 300px; 
+    font-size: 28px;
+}
+  
+#browse_galleries_container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    text-align: center;
+    aspect-ratio: 1; 
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #262119;
+    border-right:  10px solid #262119;
+    border-bottom:  10px solid #262119;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+
+    transition: border-color 0.2s ease; 
+    cursor: pointer; 
+}
+  
+#browse_galleries_container div span {
+    background-color: #eccc92; 
+    padding: 2px 4px;
+    border-radius: 3px; 
+    border: 3px solid #262119;
+    width: 100%; 
+    word-wrap: break-word; 
+    position: relative;
+    z-index: 1;
+}
+
+#browse_galleries_container div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+    z-index: 0;
+}
+
+#browse_galleries_container div:hover::before {
+    opacity: 1; /* Show overlay on hover */
+}

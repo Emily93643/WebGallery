@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <title>Web Gallery</title>
+        <link rel="stylesheet" href="style/main.css" >
+        <link rel="stylesheet" href="style/comment.css" >
+        <link rel="stylesheet" href="style/image.css" >
+        <link rel="stylesheet" href="style/galleries.css" >
+        <script type="module" src="js/index.mjs"></script>
+    </head>
+    <body>
+        <header id="top_nav">
+            <h1 id="title">Web Gallery</h1>
+            <div class="nav_buttons">
+                <button id="toggle_form" class="btn hidden">Add Image</button>
+                <button id="browse_button" class="btn hidden">Browse</button>
+                <button id="my_gallery_button" class="btn hidden">My Gallery</button>
+                <button id="signout_button" class="btn hidden">Signout</button>
+            </div>
+        </header>
+
+        <p id="error_box"></p>
+
+        <section id="add_image_form">
+            <h2>Add a New Image</h2>
+            <form id="image_form">
+                <input type="text" id="image_title" class="form_element" placeholder="Title" required >
+                <input type="file" id="image_file" class="form_element" name="picture" accept="image/*" required/>
+                <button type="submit" >Add Image</button>
+            </form>
+        </section>
+
+        <div class="sign_container">
+            <form id="signin_form" class="sign_form">
+                <input type="text" name="username" class="form_element sign" placeholder="Enter a username" required />
+                <input type="password" name="password" class="form_element sign" placeholder="Enter a password" required />
+                <button type="submit" >Sign In</button>
+                <button class="btn static" id="to_signup_form">Sign Up</button>
+            </form>
+    
+            <form id="signup_form" class="sign_form hidden">
+                <input type="text" name="username" class="form_element sign" placeholder="Enter a username" required />
+                <input type="password" name="password" class="form_element sign" placeholder="Enter a password" required />
+                <button type="submit" >Sign up</button>
+                <button class="btn static" id="to_signin_form">Sign in</button>
+            </form>
+        </div>
+        
+        <div id="browse_galleries_container" class="hidden">
+            <button id="prev_btn">❮</button>
+            <button id="next_btn">❯</button>
+        </div>
+
+        <div id="gallery_container" class="hidden"></div>
+
+        <button id="prev_comments" >Previous 10 Comments</button>
+        <button id="next_comments" >Next 10 Comments</button>
+
+        <footer>
+            <a href="credits.html">credits</a>
+        </footer>
+    </body>
+</html>
